@@ -1,15 +1,17 @@
 package kalulu.controllers;
 
+import org.joda.time.LocalTime;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@Controller
 class KaluluController {
 
-    @RequestMapping("/hello")
-    public String greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-        return "Hello, Kalulu!";
+    @RequestMapping("/")
+    public String greeting(Model model) {
+        model.addAttribute("time", new LocalTime());
+        return "index";
     }
 
 
