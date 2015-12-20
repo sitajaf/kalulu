@@ -1,0 +1,67 @@
+[
+  {
+    "NO": 1,
+    "DIST CODE": 1,
+    "DISTRICT NAME": "APAC",
+    "EA CODE": 2,
+    "EA NAME": "KWANIA COUNTY",
+    "SUB COUNTY CODE": 1,
+    "SUB COUNTY NAME": "ADUKU",
+    "PARISH CODE": 1,
+    "PARISH NAME": "ADYEDA",
+    "PS CODE": 1,
+    "POLLING STATION NAME": "ADYEDA CENTRE"
+  },
+  {
+    "NO": 2,
+    "DIST CODE": 1,
+    "DISTRICT NAME": "APAC",
+    "EA CODE": 2,
+    "EA NAME": "KWANIA COUNTY",
+    "SUB COUNTY CODE": 1,
+    "SUB COUNTY NAME": "ADUKU",
+    "PARISH CODE": 1,
+    "PARISH NAME": "ADYEDA",
+    "PS CODE": 2,
+    "POLLING STATION NAME": "APORWEGI P.7 SCHOOL"
+  },
+  {
+    "NO": 3,
+    "DIST CODE": 1,
+    "DISTRICT NAME": "APAC",
+    "EA CODE": 2,
+    "EA NAME": "KWANIA COUNTY",
+    "SUB COUNTY CODE": 1,
+    "SUB COUNTY NAME": "ADUKU",
+    "PARISH CODE": 1,
+    "PARISH NAME": "ADYEDA",
+    "PS CODE": 3,
+    "POLLING STATION NAME": "ADYEDA IMALO"
+  },
+  {
+    "NO": 4,
+    "DIST CODE": 1,
+    "DISTRICT NAME": "APAC",
+    "EA CODE": 2,
+    "EA NAME": "KWANIA COUNTY",
+    "SUB COUNTY CODE": 1,
+    "SUB COUNTY NAME": "ADUKU",
+    "PARISH CODE": 2,
+    "PARISH NAME": "ALIRA",
+    "PS CODE": 1,
+    "POLLING STATION NAME": "ALIRA B"
+  },
+  {
+    "NO": 5,
+    "DIST CODE": 1,
+    "DISTRICT NAME": "APAC",
+    "EA CODE": 2,
+    "EA NAME": "KWANIA COUNTY",
+    "SUB COUNTY CODE": 1,
+    "SUB COUNTY NAME": "ADUKU",
+    "PARISH CODE": 2,
+    "PARISH NAME": "ALIRA",
+    "PS CODE": 2,
+    "POLLING STATION NAME": "AKOT A"
+  }
+]
