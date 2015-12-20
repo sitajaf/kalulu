@@ -52,4 +52,9 @@ public class PollingStationServiceImpl implements PollingStationService {
             pollingStationRepository.save(pollingStations);
         }
     }
+
+    @Override
+    public boolean alreadyLoaded() {
+        return pollingStationRepository.count() > 0;
+    }
 }

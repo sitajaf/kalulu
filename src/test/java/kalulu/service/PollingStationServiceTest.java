@@ -10,8 +10,11 @@ import org.mockito.Mock;
 import java.util.Arrays;
 import java.util.Collections;
 
+import static junit.framework.TestCase.assertFalse;
+import static junit.framework.TestCase.assertTrue;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 public class PollingStationServiceTest {
@@ -57,5 +60,17 @@ public class PollingStationServiceTest {
         pollingStationService.load("src/test/resources/empty-polling-stations-test.json");
 
         verify(mockPollingStationRepository, times(0)).save(Collections.emptyList());
+    }
+
+    @Test
+    public void shouldReturnTrueForIfThereArePollingStationsAlready() throws Exception {
+        when(mockPollingStationRepository.count()).thenReturn(1000L);
+        assertTrue(pollingStationService.alreadyLoaded());
+    }
+
+    @Test
+    public void shouldReturnFalseForIfTherePollingStationsAlready() throws Exception {
+        when(mockPollingStationRepository.count()).thenReturn(0L);
+        assertFalse(pollingStationService.alreadyLoaded());
     }
 }
