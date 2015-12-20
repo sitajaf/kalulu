@@ -10,11 +10,7 @@ import org.mockito.Mock;
 import java.util.Arrays;
 import java.util.Collections;
 
-import static junit.framework.TestCase.assertFalse;
-import static junit.framework.TestCase.assertTrue;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 import static org.mockito.MockitoAnnotations.initMocks;
 
 public class PollingStationServiceTest {
@@ -63,14 +59,14 @@ public class PollingStationServiceTest {
     }
 
     @Test
-    public void shouldReturnTrueForIfThereArePollingStationsAlready() throws Exception {
+    public void shouldNotLoadInvalidPollingStationsToDBIfTheHaveAlreadyBeenLoaded() throws Exception {
         when(mockPollingStationRepository.count()).thenReturn(1000L);
-        assertTrue(pollingStationService.alreadyLoaded());
-    }
+        pollingStationService.load("src/test/resources/polling-stations-test-mini.json");
 
-    @Test
-    public void shouldReturnFalseForIfTherePollingStationsAlready() throws Exception {
-        when(mockPollingStationRepository.count()).thenReturn(0L);
-        assertFalse(pollingStationService.alreadyLoaded());
+        verify(mockPollingStationRepository, times(0))
+                .save(Arrays.asList(
+                        new PollingStation(0L, 1, 1, "APAC", 2, "KWANIA COUNTY", 1, "ADUKU", 1, "ADYEDA", 1, "ADYEDA CENTRE"),
+                        new PollingStation(0L, 2, 1, "APAC", 2, "KWANIA COUNTY", 1, "ADUKU", 1, "ADYEDA", 2, "APORWEGI P.7 SCHOOL")
+                ));
     }
 }

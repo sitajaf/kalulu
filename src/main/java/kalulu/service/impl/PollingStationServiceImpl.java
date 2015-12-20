@@ -25,6 +25,16 @@ public class PollingStationServiceImpl implements PollingStationService {
 
     @Override
     public void load(String file) throws IOException {
+        if (pollingStationRepository.count() == 0) {
+            List<PollingStation> pollingStations = loadPollingStations(file);
+
+            if (pollingStations.size() > 0) {
+                pollingStationRepository.save(pollingStations);
+            }
+        }
+    }
+
+    private List<PollingStation> loadPollingStations(String file) throws IOException {
         JsonParser jsonParser = new JsonFactory().createParser(new File(file));
 
         PollingStation pollingStation = null;
@@ -47,14 +57,7 @@ public class PollingStationServiceImpl implements PollingStationService {
                 PSFieldValues.valueOf(fieldName).setValue(pollingStation, value);
             }
         }
-
-        if (pollingStations.size() > 0) {
-            pollingStationRepository.save(pollingStations);
-        }
+        return pollingStations;
     }
 
-    @Override
-    public boolean alreadyLoaded() {
-        return pollingStationRepository.count() > 0;
-    }
 }
