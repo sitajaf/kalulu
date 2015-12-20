@@ -10,7 +10,6 @@ import org.mockito.Mock;
 import java.util.Arrays;
 import java.util.Collections;
 
-import static org.mockito.Matchers.anyList;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
@@ -54,7 +53,7 @@ public class PollingStationServiceTest {
     }
 
     @Test
-    public void shouldNotLoadpollingStationsToDB() throws Exception {
+    public void shouldNotLoadInvalidPollingStationsToDB() throws Exception {
         pollingStationService.load("src/test/resources/empty-polling-stations-test.json");
 
         verify(mockPollingStationRepository, times(0)).save(Collections.emptyList());
