@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
 import kalulu.dao.PollingStationRepository;
+import kalulu.models.PSFieldValues;
 import kalulu.models.PollingStation;
 import kalulu.service.PollingStationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,41 +41,7 @@ public class PollingStationServiceImpl implements PollingStationService {
                 jsonParser.nextToken();
                 String value = jsonParser.getValueAsString();
 
-                switch (fieldName) {
-                    case "NO":
-                        pollingStation.setNumber(Integer.parseInt(value));
-                        break;
-                    case "DIST_CODE":
-                        pollingStation.setDistrictCode(Integer.parseInt(value));
-                        break;
-                    case "DISTRICT_NAME":
-                        pollingStation.setDistrictName(value);
-                        break;
-                    case "EA_CODE":
-                        pollingStation.setEaCode(Integer.parseInt(value));
-                        break;
-                    case "EA_NAME":
-                        pollingStation.setEaName(value);
-                        break;
-                    case "SUB_COUNTY_CODE":
-                        pollingStation.setSubCountyCode(Integer.parseInt(value));
-                        break;
-                    case "SUB_COUNTY_NAME":
-                        pollingStation.setSubCountyName(value);
-                        break;
-                    case "PARISH_CODE":
-                        pollingStation.setParishCode(Integer.parseInt(value));
-                        break;
-                    case "PARISH_NAME":
-                        pollingStation.setParishName(value);
-                        break;
-                    case "PS_CODE":
-                        pollingStation.setPsCode(Integer.parseInt(value));
-                        break;
-                    case "POLLING_STATION_NAME":
-                        pollingStation.setPsName(value);
-                        break;
-                }
+                PSFieldValues.valueOf(fieldName).setValue(pollingStation, value);
             }
         }
 
