@@ -1,28 +1,28 @@
 [
   {
-    "no": 1,
-    "distCode": 1,
-    "districtName": "APAC",
-    "eaCode": 2,
-    "eaName": "KWANIA COUNTY",
-    "subCountyCode": 1,
-    "subCountyName": "ADUKU",
-    "parishCode": 1,
-    "parishName": "ADYEDA",
-    "psCode": 1,
-    "pollingStationName": "ADYEDA CENTRE"
+    "NO": 1,
+    "DIST_CODE": 1,
+    "DISTRICT_NAME": "APAC",
+    "EA_CODE": 2,
+    "EA_NAME": "KWANIA COUNTY",
+    "SUB_COUNTY_CODE": 1,
+    "SUB_COUNTY_NAME": "ADUKU",
+    "PARISH_CODE": 1,
+    "PARISH_NAME": "ADYEDA",
+    "PS_CODE": 1,
+    "POLLING_STATION_NAME": "ADYEDA CENTRE"
   },
   {
-    "no": 2,
-    "distCode": 1,
-    "districtName": "APAC",
-    "eaCode": 2,
-    "eaName": "KWANIA COUNTY",
-    "subCountyCode": 1,
-    "subCountyName": "ADUKU",
-    "parishCode": 1,
-    "parishName": "ADYEDA",
-    "psCode": 2,
-    "pollingStationName": "APORWEGI P.7 SCHOOL"
+    "NO": 2,
+    "DIST_CODE": 1,
+    "DISTRICT_NAME": "APAC",
+    "EA_CODE": 2,
+    "EA_NAME": "KWANIA COUNTY",
+    "SUB_COUNTY_CODE": 1,
+    "SUB_COUNTY_NAME": "ADUKU",
+    "PARISH_CODE": 1,
+    "PARISH_NAME": "ADYEDA",
+    "PS_CODE": 2,
+    "POLLING_STATION_NAME": "APORWEGI P.7 SCHOOL"
   }
 ]

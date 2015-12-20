@@ -41,37 +41,37 @@ public class PollingStationServiceImpl implements PollingStationService {
                 String value = jsonParser.getValueAsString();
 
                 switch (fieldName) {
-                    case "no":
+                    case "NO":
                         pollingStation.setNumber(Integer.parseInt(value));
                         break;
-                    case "distCode":
+                    case "DIST_CODE":
                         pollingStation.setDistrictCode(Integer.parseInt(value));
                         break;
-                    case "districtName":
+                    case "DISTRICT_NAME":
                         pollingStation.setDistrictName(value);
                         break;
-                    case "eaCode":
+                    case "EA_CODE":
                         pollingStation.setEaCode(Integer.parseInt(value));
                         break;
-                    case "eaName":
+                    case "EA_NAME":
                         pollingStation.setEaName(value);
                         break;
-                    case "subCountyCode":
+                    case "SUB_COUNTY_CODE":
                         pollingStation.setSubCountyCode(Integer.parseInt(value));
                         break;
-                    case "subCountyName":
+                    case "SUB_COUNTY_NAME":
                         pollingStation.setSubCountyName(value);
                         break;
-                    case "parishCode":
+                    case "PARISH_CODE":
                         pollingStation.setParishCode(Integer.parseInt(value));
                         break;
-                    case "parishName":
+                    case "PARISH_NAME":
                         pollingStation.setParishName(value);
                         break;
-                    case "psCode":
+                    case "PS_CODE":
                         pollingStation.setPsCode(Integer.parseInt(value));
                         break;
-                    case "pollingStationName":
+                    case "POLLING_STATION_NAME":
                         pollingStation.setPsName(value);
                         break;
                 }
