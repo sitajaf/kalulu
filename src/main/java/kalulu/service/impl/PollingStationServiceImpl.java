@@ -26,7 +26,8 @@ public class PollingStationServiceImpl implements PollingStationService {
     @Override
     public void load(String file) throws IOException {
         JsonParser jsonParser = new JsonFactory().createParser(new File(file));
-        PollingStation pollingStation = new PollingStation();
+
+        PollingStation pollingStation = null;
         List<PollingStation> pollingStations = new ArrayList<>();
 
         while (jsonParser.nextToken() != JsonToken.END_ARRAY) {
@@ -35,7 +36,9 @@ public class PollingStationServiceImpl implements PollingStationService {
             if (currentToken == JsonToken.START_OBJECT) {
                 pollingStation = new PollingStation();
             } else if (currentToken == JsonToken.END_OBJECT) {
-                pollingStations.add(pollingStation);
+                if (pollingStation != null) {
+                    pollingStations.add(pollingStation);
+                }
             } else if (currentToken == JsonToken.FIELD_NAME) {
                 String fieldName = jsonParser.getValueAsString();
                 jsonParser.nextToken();
@@ -45,6 +48,8 @@ public class PollingStationServiceImpl implements PollingStationService {
             }
         }
 
-        pollingStationRepository.save(pollingStations);
+        if (pollingStations.size() > 0) {
+            pollingStationRepository.save(pollingStations);
+        }
     }
 }
