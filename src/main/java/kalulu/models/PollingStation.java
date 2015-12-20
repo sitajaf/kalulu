@@ -42,7 +42,6 @@ public class PollingStation {
         if (subCountyCode != that.subCountyCode) return false;
         if (parishCode != that.parishCode) return false;
         if (psCode != that.psCode) return false;
-//        if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (districtName != null ? !districtName.equals(that.districtName) : that.districtName != null) return false;
         if (eaName != null ? !eaName.equals(that.eaName) : that.eaName != null) return false;
         if (subCountyName != null ? !subCountyName.equals(that.subCountyName) : that.subCountyName != null)
