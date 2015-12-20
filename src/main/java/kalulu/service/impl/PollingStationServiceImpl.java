@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
 import kalulu.dao.PollingStationRepository;
-import kalulu.models.PSFieldValues;
+import kalulu.models.PSFieldNames;
 import kalulu.models.PollingStation;
 import kalulu.service.PollingStationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +54,7 @@ public class PollingStationServiceImpl implements PollingStationService {
                 jsonParser.nextToken();
                 String value = jsonParser.getValueAsString();
 
-                PSFieldValues.valueOf(fieldName).setValue(pollingStation, value);
+                PSFieldNames.valueOf(fieldName).setValue(pollingStation, value);
             }
         }
         return pollingStations;

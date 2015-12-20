@@ -1,6 +1,6 @@
 package kalulu.models;
 
-public enum PSFieldValues {
+public enum PSFieldNames {
     NO {
         @Override
         public void setValue(PollingStation pollingStation, String value) {
